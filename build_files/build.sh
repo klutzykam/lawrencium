@@ -12,9 +12,9 @@ set -ouex pipefail
 # this installs a package from fedora repos
 dnf5 install -y tmux
 dnf5 install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release -y
-dnf5 install mangowc
-dnf5 copr enable avengemedia/dms-git -y
-dnf5 copr enable avengemedia/danklinux -y
+dnf5 install -y mangowc
+dnf5 copr enable -y avengemedia/dms-git
+dnf5 copr enable -y avengemedia/danklinux
 
 dnf5 -y install niri dms dms-greeter
 # Use a COPR Example:
