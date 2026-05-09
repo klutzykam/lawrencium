@@ -12,4 +12,3 @@ dnf5 -y install dms dms-greeter foot
 
 systemctl enable podman.socket
 systemctl enable greetd.service
-systemctl enable --user dms.service
