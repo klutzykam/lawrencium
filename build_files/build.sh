@@ -8,7 +8,7 @@ dnf5 install -y mangowc
 dnf5 -y copr enable avengemedia/dms-git
 dnf5 -y copr enable avengemedia/danklinux
 
-dnf5 -y install dms dms-greeter foot
+dnf5 -y install dms dms-greeter foot quickshell-git23
 
 systemctl enable podman.socket
 systemctl enable greetd.service
