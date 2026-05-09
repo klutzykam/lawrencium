@@ -10,7 +10,6 @@ dnf5 -y copr enable avengemedia/danklinux
 
 dnf5 -y install dms dms-greeter foot
 
-dms setup greeter -y
-
 systemctl enable podman.socket
+systemctl enable greetd.service
 systemctl enable --user dms.service
