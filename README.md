@@ -1,2 +1,2 @@
-MY AWESOME ASS BOOTC IMAGE. 
-#imLowkeyGay #broDidYouSeeThat
+learning how to use bootc
+dont use this please thanks
