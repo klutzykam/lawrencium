@@ -3,7 +3,7 @@ FROM scratch AS ctx
 COPY build_files /
 
 # Base Image
-FROM archlinux:latest
+FROM ghcr.io/bootcrew/arch-bootc:latest-amd64
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest

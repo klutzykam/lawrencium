@@ -8,4 +8,4 @@ pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst
 pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst' --noconfirm >> /dev/null
 echo -e "\n[chaotic-aur]\n Include = /etc/pacman.d/chaotic-mirrorlist" >> /etc/pacman.conf 
 
-pacman -Syu base bash bash-completion curl gcc git nano tar unzip linux nvidia-open nvidia-utils efibootmgr linux-firmware plasma plasma-login-manager konsole dolphin pipewire wireplumber udev ostree chaotic-aur/bootc --noconfirm
+pacman -Syu bash bash-completion curl gcc nano tar unzip nvidia-open nvidia-utils efibootmgr plasma plasma-login-manager konsole dolphin pipewire wireplumber --noconfirm
