@@ -8,13 +8,7 @@ pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst
 pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst' --noconfirm >> /dev/null
 echo -e "\n[chaotic-aur]\n Include = /etc/pacman.d/chaotic-mirrorlist" >> /etc/pacman.conf 
 
-<<<<<<< Updated upstream
-pacman -Syu bash bash-completion curl gcc nano tar unzip nvidia-open nvidia-utils efibootmgr plasma plasma-login-manager konsole dolphin pipewire wireplumber chaotic-aur/opentabletdriver flatpak lvm2 tpm2-tss --noconfirm
-=======
-pacman -Syu bash bash-completion curl gcc nano tar unzip efibootmgr plasma plasma-login-manager konsole dolphin pipewire wireplumber chaotic-aur/opentabletdriver flatpak lvm2 tpm2-tss fastfetch nvidia nvidia-utils --noconfirm
-
-flatpak install io.github.kolunmi.Bazaar --assumeyes
->>>>>>> Stashed changes
+pacman -Syu bash bash-completion curl gcc nano tar unzip nvidia-open nvidia-utils efibootmgr plasma plasma-login-manager konsole dolphin pipewire wireplumber chaotic-aur/opentabletdriver flatpak lvm2 tpm2-tss nvidia nvidia-utils --noconfirm
 
 echo "enable my login manager pls thx much love"
 systemctl enable plasmalogin
