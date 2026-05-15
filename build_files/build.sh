@@ -8,7 +8,17 @@ pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst
 pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst' --noconfirm >> /dev/null
 echo -e "\n[chaotic-aur]\n Include = /etc/pacman.d/chaotic-mirrorlist" >> /etc/pacman.conf 
 
-pacman -Syu bash bash-completion curl gcc nano tar unzip efibootmgr plasma plasma-login-manager konsole dolphin pipewire wireplumber chaotic-aur/opentabletdriver flatpak lvm2 tpm2-tss nvidia-open nvidia-utils --noconfirm
+#pacman -R linux --noconfirm >> /dev/null
+pacman -Syu nvidia-open nvidia-utils --noconfirm >> /dev/null
+pacman -Syu curl gcc nano tar unzip efibootmgr plasma plasma-login-manager konsole dolphin pipewire wireplumber chaotic-aur/opentabletdriver flatpak lvm2 tpm2-tss dhcpcd fastfetch --noconfirm
+pacman -Syu git podman podman-compose distrobox udiskie udisks2 firewalld networkmanager libmtp --noconfirm >> /dev/null
+#copied from tartaria to see if this was the issue burp
+KERNEL_VERSION="$(basename "$(find /usr/lib/modules -maxdepth 1 -type d | grep -v -E "\.img$" | tail -n 1)")"
+DRACUT_NO_XATTR=1 dracut --force --no-hostonly --reproducible --zstd --verbose --add ostree "/usr/lib/modules/$KERNEL_VERSION/initramfs.img"
 
-echo "enable my login manager pls thx much love"
-systemctl enable plasmalogin
+echo "Enable Systemd services."
+systemctl enable \
+    plasmalogin.service \
+    NetworkManager.service \
+    firewalld.service 
+systemctl enable --global opentabletdriver.service
