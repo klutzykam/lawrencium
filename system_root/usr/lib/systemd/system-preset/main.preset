@@ -5,3 +5,4 @@ enable NetworkManager.service
 enable systemd-resolved.service
 
 enable power-profiles-daemon.service
+enable rechunker-group-fix
