@@ -1,0 +1,7 @@
+enable plasmalogin.service
+enable firewalld.service
+
+enable NetworkManager.service
+enable systemd-resolved.service
+
+enable power-profiles-daemon.service
