@@ -10,7 +10,7 @@ echo -e "\n[chaotic-aur]\n Include = /etc/pacman.d/chaotic-mirrorlist" >> /etc/p
 
 #pacman -R linux --noconfirm >> /dev/null
 pacman -Syu nvidia-open nvidia-utils --noconfirm >> /dev/null
-pacman -Syu curl gcc sudo nano noto-fonts noto-fonts-cjk noto-fonts-emoji tar unzip efibootmgr plasma plasma-login-manager konsole dolphin pipewire wireplumber chaotic-aur/opentabletdriver flatpak lvm2 tpm2-tss dhcpcd fastfetch --noconfirm
+pacman -Syu curl sof-firmware gcc sudo nano noto-fonts noto-fonts-cjk noto-fonts-emoji tar unzip efibootmgr plasma plasma-login-manager konsole dolphin pipewire wireplumber chaotic-aur/opentabletdriver flatpak lvm2 tpm2-tss dhcpcd fastfetch --noconfirm
 pacman -Syu git podman podman-compose distrobox udiskie udisks2 firewalld networkmanager libmtp --noconfirm >> /dev/null
 
 #copied from tartaria will replace / understand later...
