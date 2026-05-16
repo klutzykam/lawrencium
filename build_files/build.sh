@@ -10,7 +10,7 @@ pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.
 echo -e "\n[chaotic-aur]\n Include = /etc/pacman.d/chaotic-mirrorlist" >> /etc/pacman.conf
 
 pacman -Sy --noconfirm >> /dev/null
-pacman -Syu git podman podman-compose distrobox udiskie udisks2 firewalld networkmanager libmtp nvidia-open nvidia-utils curl gcc sudo nano sof-firmware noto-fonts noto-fonts-cjk noto-fonts-emoji tar unzip efibootmgr plasma plasma-login-manager ark power-profiles-daemon konsole dolphin pipewire wireplumber chaotic-aur/opentabletdriver flatpak lvm2 tpm2-tss dhcpcd fastfetch --noconfirm
+pacman -Syu base-devel procps-ng file git podman podman-compose distrobox udiskie udisks2 firewalld networkmanager libmtp nvidia-open nvidia-utils curl gcc sudo nano sof-firmware noto-fonts noto-fonts-cjk noto-fonts-emoji tar unzip efibootmgr plasma plasma-login-manager ark power-profiles-daemon konsole dolphin pipewire wireplumber chaotic-aur/opentabletdriver flatpak lvm2 tpm2-tss dhcpcd fastfetch --noconfirm
 pacman -Rns discover --noconfirm >> /dev/null
 
 # dracut.... copied from tartaria, will replace later...
