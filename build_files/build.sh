@@ -2,8 +2,6 @@
 
 set -ouex pipefail
 
-chmod +x /usr/bin/rechunker-group-fix
-
 pacman-key --init
 pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
 pacman-key --lsign-key 3056513887B78AEB
@@ -11,17 +9,16 @@ pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst
 pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst' --noconfirm >> /dev/null
 echo -e "\n[chaotic-aur]\n Include = /etc/pacman.d/chaotic-mirrorlist" >> /etc/pacman.conf
 
-#pacman -R linux --noconfirm >> /dev/null
-pacman -Syu nvidia-open nvidia-utils --noconfirm >> /dev/null
-
-pacman -Syu curl gcc sudo nano sof-firmware noto-fonts noto-fonts-cjk noto-fonts-emoji tar unzip efibootmgr plasma plasma-login-manager ark power-profiles-daemon konsole dolphin pipewire wireplumber chaotic-aur/opentabletdriver flatpak lvm2 tpm2-tss dhcpcd fastfetch --noconfirm
+pacman -Sy --noconfirm >> /dev/null
+pacman -Syu git podman podman-compose distrobox udiskie udisks2 firewalld networkmanager libmtp nvidia-open nvidia-utils curl gcc sudo nano sof-firmware noto-fonts noto-fonts-cjk noto-fonts-emoji tar unzip efibootmgr plasma plasma-login-manager ark power-profiles-daemon konsole dolphin pipewire wireplumber chaotic-aur/opentabletdriver flatpak lvm2 tpm2-tss dhcpcd fastfetch --noconfirm
 pacman -Rns discover --noconfirm >> /dev/null
-
-pacman -Syu git podman podman-compose distrobox udiskie udisks2 firewalld networkmanager libmtp --noconfirm >> /dev/null
 
 # dracut.... copied from tartaria, will replace later...
 KERNEL_VERSION="$(basename "$(find /usr/lib/modules -maxdepth 1 -type d | grep -v -E "\.img$" | tail -n 1)")"
 DRACUT_NO_XATTR=1 dracut --force --no-hostonly --reproducible --zstd --verbose --add ostree "/usr/lib/modules/$KERNEL_VERSION/initramfs.img"
+
+chmod +x /usr/bin/rechunker-group-fix
+systemctl enable rechunker-group-fix
 
 echo "Enable Systemd services."
 systemctl preset-all
